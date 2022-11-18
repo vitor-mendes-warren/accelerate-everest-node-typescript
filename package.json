@@ -2,12 +2,11 @@
   "name": "accelerate-everest-node-typescript",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "type": "commonjs",
   "scripts": {
-    "start": "node dist/main/",
+    "start": "nodemon dist/",
     "build": "rimraf dist && tsc -p tsconfig-build.json"
   },
+  "type": "commonjs",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vitor-mendes-warren/accelerate-everest-node-typescript.git"
@@ -20,18 +19,24 @@
   },
   "homepage": "https://github.com/vitor-mendes-warren/accelerate-everest-node-typescript#readme",
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@types/express": "^4.17.14",
     "eslint": "^8.0.1",
     "eslint-config-standard-with-typescript": "^23.0.0",
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-n": "^15.0.0",
     "eslint-plugin-promise": "^6.0.0",
+    "express": "^4.18.2",
+    "node": "^18.11.9",
+    "ts-node-dev": "^2.0.0",
     "typescript": "^4.9.3"
   },
   "engines": {
-    "node": "16.x"
+    "node": "19.x"
   },
   "dependencies": {
-    "rimraf": "^3.0.2"
+    "dotenv": "^16.0.3",
+    "nodemon": "^2.0.20",
+    "rimraf": "^3.0.2",
+    "typescript-estree": "^18.1.0"
   }
 }

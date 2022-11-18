@@ -8,7 +8,7 @@
     "skipLibCheck": true,
     "sourceMap": true,
     "moduleResolution": "node",
-    "module": "Commonjs",
+    "module": "CommonJS",
     "esModuleInterop": true,
     "strictFunctionTypes": true,
     "strictPropertyInitialization": false,
