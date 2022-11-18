@@ -1,5 +1,6 @@
+
 export class PersonController {
-     speak(name?: string) {
-          return `olá ${name?.toLocaleUpperCase() ?? 'Fulano'}!!`
-     }
+  speak (name?: string): string {
+    return `olá ${name?.toLocaleUpperCase() ?? 'Fulano'}!!`
+  }
 }
