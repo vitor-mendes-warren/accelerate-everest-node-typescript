@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "start": "nodemon dist/",
-    "build": "rimraf dist && tsc -p tsconfig-build.json"
+    "build": "rimraf dist && tsc -p tsconfig-build.json && nodemon dist/"
   },
   "type": "commonjs",
   "repository": {
@@ -34,9 +34,11 @@
     "node": "19.x"
   },
   "dependencies": {
+    "body-parser": "^1.20.1",
     "dotenv": "^16.0.3",
     "nodemon": "^2.0.20",
     "rimraf": "^3.0.2",
-    "typescript-estree": "^18.1.0"
+    "typescript-estree": "^18.1.0",
+    "yup": "^0.32.11"
   }
 }

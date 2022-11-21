@@ -3,6 +3,6 @@ import CustomerController from '../controllers/customer_controller'
 
 const customerRouter = Router()
 
-customerRouter.get('/', CustomerController.handle)
+customerRouter.post('/', CustomerController.handle)
 
 export default  customerRouter
