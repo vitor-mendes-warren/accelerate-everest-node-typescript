@@ -2,27 +2,6 @@ import * as yup from 'yup'
 import ICustomer from '../../../domain/entity/customer_entity'
 import { parse } from 'date-fns'
 
-// const isoDate = ({ format = 'yyyy-MM-dd' } = {}) =>
-//    Date().ransform(function (_, originalValue) {
-//       // Parses the date using `date-fns` `parse` method if it's not nil
-//       return maybeParseDate(format, originalValue)
-//    })
-
-
-// function _parseDateString(originalValue: string) {
-
-//    if (isDate(originalValue) === true) {
-//       return originalValue   
-//    } else {
-//       return (parse(originalValue, "dd/MM/yyyy", new Date()))
-//    }
-//    // const parsedDate = isDate(originalValue) === true
-//    //    ? originalValue
-//    //    : parse(originalValue, "dd/MM/yyyy", new Date())
-
-//    // return parsedDate
-// }
-
 enum cpfMaxMin { 'max' = 14, 'min' = 11 };
 enum phoneMaxMin { 'max' = 15, 'min' = 11 };
 enum postalCodeMaxMin { 'max' = 9, 'min' = 8 };
