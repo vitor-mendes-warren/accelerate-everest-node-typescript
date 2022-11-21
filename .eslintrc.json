@@ -21,7 +21,8 @@
       "@typescript-eslint/no-extraneous-class":"off",
       "padded-blocks":"off",
       "@typescript-eslint/quotes":"off",
-      "no-multi-spaces":"off"
+      "no-multi-spaces":"off",
+      "@typescript-eslint/no-misused-promises":"off"
 
    }
 }

@@ -1,32 +1,15 @@
 import { Request, Response } from 'express'
-import { Interface } from 'readline'
-import * as yup from 'yup'
+import ICustomer from '../../domain/entity/customer_entity'
+import CustomerService from '../../domain/services/customer_service'
 
+const  customerList: ICustomer[] = [] 
 
-interface ICustomer {
-  full_name: string
-  email: string
-  email_confirmation: string
-  cpf: string
-  cellphone: string
-  birthdate: string
-  email_sms: boolean
-  whatsapp: boolean
-  country: string
-  city: string
-  postal_code: string
-  address: string
+export default class CustomerController{
 
-}
+  static async handle(req: Request, res: Response) {
+    const userService = new CustomerService(customerList)
+    const response = await userService.create(req.body)
+    return res.status(response.code).json(response.data)
 
-const bodyValidation = yup.object().shape({
-
-})
-
-export class CustomerController{
-
-  static handle(req: Request, res: Response) {
-    return res.send(req.body)
    }
 }
-export default CustomerController
