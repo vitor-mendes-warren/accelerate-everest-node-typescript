@@ -10,6 +10,4 @@ app.use(router)
 config({ path: './config/config.env' })
 const port = process.env.PORT ?? 8000
 
-app.listen(port, () => {
-   console.log(`servidor rodando em ${port}`)
-})
+app.listen(port)
