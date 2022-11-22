@@ -13,7 +13,7 @@ export default async function customerMiddleware (req: Request, res: Response, n
         errors[error.path] = error.message
       }
     })
-    res.json({
+    res.status(404).json({
       errors
     })
     return

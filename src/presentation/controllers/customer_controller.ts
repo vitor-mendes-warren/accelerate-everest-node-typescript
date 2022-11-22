@@ -5,9 +5,13 @@ import CustomerService from '../../domain/services/customer_service'
 const customerList: ICustomer[] = []
 
 export default class CreateCustomerController {
-  static async handle (req: Request, res: Response): Promise<Response> {
+  static handle (req: Request, res: Response): Response {
     const userService = new CustomerService(customerList)
-    const response = await userService.create(req.body)
-    return res.status(response.code).json(response.data)
+    try {
+      userService.create(req.body)
+    } catch (error) {
+      return res.status(400).json(error)
+    }
+    return res.status(200).json({ status: 'sucess', customer_created: req.body as ICustomer })
   }
 }
