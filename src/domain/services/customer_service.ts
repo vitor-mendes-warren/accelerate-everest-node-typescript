@@ -13,11 +13,7 @@ export default class CustomerService {
   }
 
   public async create (customer: ICustomer): Promise<ICustomersResponse> {
-    try {
-      this.users.push(customer)
-      return { code: 201, data: { status: 'sucess', customer_added: customer } }
-    } catch (error: any) {
-      return { code: 422, data: error }
-    }
+    this.users.push(customer)
+    return { code: 201, data: { status: 'sucess', customer_added: customer } }
   }
 }
