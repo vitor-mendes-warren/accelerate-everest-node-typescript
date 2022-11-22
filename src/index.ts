@@ -3,7 +3,6 @@ import express, { Express, json } from 'express'
 import router from './presentation/routes/routes'
 const app: Express = express()
 
-
 app.use(json())
 app.use(router)
 

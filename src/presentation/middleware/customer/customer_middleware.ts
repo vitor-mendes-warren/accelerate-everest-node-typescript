@@ -16,6 +16,7 @@ export default async function customerMiddleware (req: Request, res: Response, n
     res.json({
       errors
     })
+    return
   }
   next()
 }
