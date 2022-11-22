@@ -5,24 +5,10 @@
    
    },
    "rules": {
-      // "@typescript-eslint/comma-spacing":"off",
-      // "@typescript-eslint/key-spacing":"off",
-      // "@typescript-eslint/indent": "off",
-      "@typescript-eslint/space-before-blocks": "off"
-      // "@typescript-eslint/restrict-template-expressions":"off",
-      // "@typescript-eslint/comma-dangle":"off",
-      // "@typescript-eslint/implicit-arrow-linebreak":"off",
-      // "no-trailing-spaces":"off",
-      // "no-multiple-empty-lines":"off",
-      // "@typescript-eslint/block-spacing":"off",
-      // "@typescript-eslint/space-before-function-paren":"off",
-      // "eol-last":"off",
-      // "@typescript-eslint/explicit-function-return-type":"off",
-      // "@typescript-eslint/no-extraneous-class":"off",
-      // "padded-blocks":"off",
-      // "@typescript-eslint/quotes":"off",
-      // "no-multi-spaces":"off",
-      // "@typescript-eslint/no-misused-promises":"off"
+    
+      "@typescript-eslint/space-before-blocks": "off",
+      "@typescript-eslint/no-extraneous-class":"off"   // warning when create only a static function
+   
 
    }
 }

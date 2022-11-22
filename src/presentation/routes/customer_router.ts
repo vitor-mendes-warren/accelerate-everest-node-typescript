@@ -4,7 +4,6 @@ import customerMiddleware from '../middleware/customer/customer_middleware'
 
 const customerRouter = Router()
 
-
 customerRouter.post('/', customerMiddleware, CustomerController.handle)
 
-export default  customerRouter
+export default customerRouter
