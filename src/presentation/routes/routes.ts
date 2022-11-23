@@ -1,6 +1,4 @@
-
 import { Router } from 'express'
-
 import customerRouter from './customer_router'
 
 export const router = Router()

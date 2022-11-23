@@ -1,5 +1,5 @@
-import ICustomer from '../entity/customer_entity'
-import CustomerModel from '../entity/customer_model'
+import ICustomer from '@entity/customer_entity'
+import CustomerModel from '@entity/customer_model'
 
 export default class CustomerService {
   users: CustomerModel[]

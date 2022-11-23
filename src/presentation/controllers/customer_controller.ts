@@ -1,6 +1,6 @@
 import { Request, Response } from 'express'
-import ICustomer from '../../domain/entity/customer_entity'
-import CustomerService from '../../domain/services/customer_service'
+import ICustomer from '@entity/customer_entity'
+import CustomerService from '@services/customer_service'
 
 const customerList: ICustomer[] = []
 

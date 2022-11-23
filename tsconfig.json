@@ -1,5 +1,6 @@
 {
-  "compilerOptions": {
+  
+  "compilerOptions": {  
     "outDir": "dist",
     "rootDir": "src",
     "target": "es2021",
@@ -12,8 +13,29 @@
     "esModuleInterop": true,
     "strictFunctionTypes": true,
     "strictPropertyInitialization": false,
+    "baseUrl": "./", /* Specify the base directory to resolve non-relative module names. */
+    "paths": { /* Specify a set of entries that re-map imports to additional lookup locations. */
+      "@controller/*": [
+        "./src/presentation/controllers/*"
+      ],
+      "@middleware/*": [
+        "./src/presentation/middleware/*"
+      ],
+      "@entity/*": [
+        "./src/domain/entity/*"
+      ],
+      "@services/*": [
+        "./src/domain/services/*"
+      ],
+      "@routes/*": [
+        "./src/presentation/routes/*"
+      ],
+    },
   },
   "include": [
     "src",
-  ]
+  ],
+  
+  
+  
 }

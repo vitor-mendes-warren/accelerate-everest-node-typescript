@@ -7,7 +7,8 @@
    "rules": {
     
       "@typescript-eslint/space-before-blocks": "off",
-      "@typescript-eslint/no-extraneous-class":"off"   // warning when create only a static function
+      "@typescript-eslint/no-extraneous-class":"off",
+      "import/no-unresolved": "off"   // warning when create only a static function
    
 
    }
