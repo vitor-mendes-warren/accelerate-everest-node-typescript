@@ -17,8 +17,7 @@ export const bodyValidation: yup.SchemaOf<ICustomer> = yup.object().shape({
     if (this.isType(value)) {
       return value
     }
-    const result = parse(originalValue, 'dd.MM.yyyy', new Date())
-    return result
+    return parse(originalValue, 'dd.MM.yyyy', new Date())
   })
     .required().max(today),
   cellphone: yup.string().min(phoneMaxMin.min).max(phoneMaxMin.max).required(),
