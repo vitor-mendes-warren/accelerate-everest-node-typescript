@@ -1,9 +1,12 @@
-class Person {
-     speak(name?: string) {
-          return `olá ${name?.toLocaleUpperCase() ?? 'Fulano'}""`
-     }
-}
+import { config } from 'dotenv'
+import express, { Express, json } from 'express'
+import router from '@routes/routes'
+const app: Express = express()
 
-const p = new Person();
-p.speak('rodrigo')
-p.speak();
+app.use(json())
+app.use(router)
+
+config({ path: './config/config.env' })
+const port = process.env.PORT ?? 8000
+
+app.listen(port)
