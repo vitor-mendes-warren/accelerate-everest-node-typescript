@@ -9,11 +9,8 @@ export default async function customerMiddleware (req: Request, res: Response, n
     const yupError = error as yup.ValidationError
     const errors: Record<string, string> = {}
     yupError.inner.forEach(error => {
-      
       if (error.path != null) {
-
         errors[error.path] = error.message
-
       }
     })
     res.status(404).json({
