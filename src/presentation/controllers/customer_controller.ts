@@ -9,9 +9,9 @@ export default class CreateCustomerController {
     const userService = new CustomerService(customerList)
     try {
       userService.create(req.body)
+      return res.status(200).json({ status: 'sucess', customer_created: req.body as ICustomer })
     } catch (error) {
       return res.status(400).json(error)
     }
-    return res.status(200).json({ status: 'sucess', customer_created: req.body as ICustomer })
   }
 }
