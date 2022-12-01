@@ -1,5 +1,9 @@
 
-export default class Customer {
+abstract class BaseModel {
+  id?: number;
+}
+
+export default class Customer extends BaseModel {
   full_name: string
   email: string
   email_confirmation: string
