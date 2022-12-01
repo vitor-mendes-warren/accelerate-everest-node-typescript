@@ -1,5 +1,5 @@
-import "reflect-metadata"
-import "./shared/container/"
+import 'reflect-metadata'
+import './shared/container/'
 import { config } from 'dotenv'
 import express, { Express, json } from 'express'
 import router from '@routes/routes'

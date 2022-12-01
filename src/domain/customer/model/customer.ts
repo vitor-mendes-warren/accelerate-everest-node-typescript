@@ -1,6 +1,6 @@
 
 abstract class BaseModel {
-  id?: number;
+  id?: number
 }
 
 export default class Customer extends BaseModel {

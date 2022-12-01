@@ -1,3 +1,3 @@
-interface IService<T> {
-  execute(entity: T): void
+export default interface IService<T> {
+  execute: (entity: T) => void
 }

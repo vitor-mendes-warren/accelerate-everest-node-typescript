@@ -9,6 +9,7 @@ enum postalCodeMaxMin { 'max' = 9, 'min' = 8 };
 const today = new Date()
 
 export const bodyValidation: yup.SchemaOf<Customer> = yup.object().shape({
+  id: yup.number(),
   full_name: yup.string().required().min(5),
   email: yup.string().required().email(),
   email_confirmation: yup.string().required().email(),
