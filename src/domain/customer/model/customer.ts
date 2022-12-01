@@ -1,7 +1,4 @@
-
-abstract class BaseModel {
-  id?: number
-}
+import BaseModel from './base_model'
 
 export default class Customer extends BaseModel {
   full_name: string
