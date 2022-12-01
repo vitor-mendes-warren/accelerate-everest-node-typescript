@@ -1,3 +1,3 @@
 export default interface IRepository<T> {
-   create(customer: T): Promise<void>
+   create(entity: T): Promise<void>
 };

@@ -31,6 +31,9 @@
       "@routes/*": [
         "./src/presentation/routes/*"
       ],
+      "@interfaces/*": [
+        "./src/interfaces/*"
+      ],
     },
   },
   "include": [

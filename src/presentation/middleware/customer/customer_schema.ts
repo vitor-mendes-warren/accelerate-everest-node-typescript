@@ -1,6 +1,6 @@
 import * as yup from 'yup'
-import ICustomer from 'src/domain/customer/entity/customer_entity'
 import { parse } from 'date-fns'
+import Customer from 'src/domain/customer/model/customer'
 
 enum cpfMaxMin { 'max' = 14, 'min' = 11 };
 enum phoneMaxMin { 'max' = 15, 'min' = 11 };
@@ -8,7 +8,7 @@ enum postalCodeMaxMin { 'max' = 9, 'min' = 8 };
 
 const today = new Date()
 
-export const bodyValidation: yup.SchemaOf<ICustomer> = yup.object().shape({
+export const bodyValidation: yup.SchemaOf<Customer> = yup.object().shape({
   full_name: yup.string().required().min(5),
   email: yup.string().required().email(),
   email_confirmation: yup.string().required().email(),
