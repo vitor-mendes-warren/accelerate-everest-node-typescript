@@ -1,5 +1,5 @@
 import Customer from 'src/domain/customer/model/customer'
-import IRepository from 'src/interfaces/domain/customer/repository/repository'
+import IRepository from '@interfaces/domain/repository/repository'
 import { inject, injectable } from 'tsyringe'
 import IService from '@interfaces/domain/customer/services/service'
 

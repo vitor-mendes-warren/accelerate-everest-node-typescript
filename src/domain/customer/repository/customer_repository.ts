@@ -1,4 +1,4 @@
-import IRepository from 'src/interfaces/domain/customer/repository/repository'
+import IRepository from '@interfaces/domain/repository/repository'
 import Customer from '../model/customer'
 
 export default class CustomerRepository implements IRepository<Customer> {
