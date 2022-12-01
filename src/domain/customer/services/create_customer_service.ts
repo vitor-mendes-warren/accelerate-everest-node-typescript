@@ -12,7 +12,7 @@ export default class CustomerService implements IService<Customer> {
     @inject("CustomerRepository")
     private customerRepository: IRepository<Customer>) { }
 
-  public async execute(customer: Customer): Promise<void> {
+  public execute(customer: Customer): void {
     this.customerRepository.create(customer)
   }
 }

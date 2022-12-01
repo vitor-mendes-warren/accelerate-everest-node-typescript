@@ -1,3 +1,3 @@
 interface IService<T> {
-  execute(entity: T): Promise<void>
+  execute(entity: T): void
 }
