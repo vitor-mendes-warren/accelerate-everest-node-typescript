@@ -1,4 +1,5 @@
-export default interface ICustomer {
+
+export default class Customer {
   full_name: string
   email: string
   email_confirmation: string

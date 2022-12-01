@@ -1,5 +1,5 @@
 import * as yup from 'yup'
-import ICustomer from '@entity/customer_entity'
+import ICustomer from 'src/domain/customer/entity/customer_entity'
 import { parse } from 'date-fns'
 
 enum cpfMaxMin { 'max' = 14, 'min' = 11 };
