@@ -1,15 +1,14 @@
 {
+   "parser": "@typescript-eslint/parser",
    "extends": "standard-with-typescript",
    "parserOptions": {
       "project": "./tsconfig.json"
-   
    },
-   "rules": {
-    
-      "@typescript-eslint/space-before-blocks": "off",
-      "@typescript-eslint/no-extraneous-class":"off",
-      "import/no-unresolved": "off"   // warning when create only a static function
-   
-
-   }
+   "env": {
+      "browser": true,
+      "es2021": true
+   },
+   "plugins": [
+      "@typescript-eslint"
+   ]
 }

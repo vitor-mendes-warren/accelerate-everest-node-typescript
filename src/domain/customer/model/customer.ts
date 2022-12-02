@@ -1,4 +1,6 @@
-export default interface ICustomer {
+import BaseModel from './base_model'
+
+export default class Customer extends BaseModel {
   full_name: string
   email: string
   email_confirmation: string

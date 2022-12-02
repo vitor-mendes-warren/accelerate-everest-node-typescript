@@ -1,6 +1,7 @@
 {
-  
-  "compilerOptions": {  
+  "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "outDir": "dist",
     "rootDir": "src",
     "target": "es2021",
@@ -22,7 +23,7 @@
         "./src/presentation/middleware/*"
       ],
       "@entity/*": [
-        "./src/domain/entity/*"
+        "src/domain/customer/entity/*"
       ],
       "@services/*": [
         "./src/domain/services/*"
@@ -30,12 +31,12 @@
       "@routes/*": [
         "./src/presentation/routes/*"
       ],
+      "@interfaces/*": [
+        "./src/interfaces/*"
+      ],
     },
   },
   "include": [
     "src",
   ],
-  
-  
-  
 }
