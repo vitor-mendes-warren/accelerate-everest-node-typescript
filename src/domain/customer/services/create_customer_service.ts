@@ -9,7 +9,7 @@ export default class CustomerService implements IService<Customer> {
     @inject('CustomerRepository')
     private readonly customerRepository: IRepository<Customer>) { }
 
-  public execute (customer: Customer): void {
+  public create (customer: Customer): void {
     this.customerRepository.create(customer)
   }
 }
