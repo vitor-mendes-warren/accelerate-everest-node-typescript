@@ -3,7 +3,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "outDir": "dist",
-    "rootDir": "./",
+    "rootDir": "src",
     "target": "es2021",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -38,6 +38,6 @@
   },
   "include": [
     "src",
-    "jest.config.ts"
+    "src/jest.config.ts"
   ],
 }

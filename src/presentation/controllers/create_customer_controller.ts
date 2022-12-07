@@ -1,16 +1,21 @@
 import { Request, Response } from 'express'
 import Customer from 'src/domain/customer/model/customer'
-import CustomerService from 'src/domain/customer/services/create_customer_service'
-import { container } from 'tsyringe'
+import { inject, injectable } from 'tsyringe'
 import IController from '@interfaces/presentation/controllers/controller'
+import IService from '@interfaces/domain/services/service'
 
+@injectable()
 export default class CreateCustomerController implements IController {
-  handle (req: Request, res: Response): Response {
-    const userService = container.resolve(CustomerService)
+  constructor (
+    @inject('CustomerService')
+    private readonly customerService: IService<Customer>) { }
+
+  handle = (req: Request, res: Response): Response => {
     try {
-      userService.create(req.body as Customer)
+      this.customerService.create(req.body as Customer)
       return res.status(200).json({ status: 'sucess', customer_created: req.body as Customer })
     } catch (error) {
+      console.log(error)
       return res.status(500).json(error)
     }
   }

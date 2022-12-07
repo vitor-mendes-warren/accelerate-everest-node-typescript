@@ -7,6 +7,9 @@
    "env": {
       "es2021": true
    },
+   "rules": {
+      "@typescript-eslint/no-misused-promises": "off"
+   },
    "plugins": [
       "@typescript-eslint"
    ]
