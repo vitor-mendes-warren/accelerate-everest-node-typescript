@@ -5,8 +5,6 @@ import IController from '@interfaces/presentation/controllers/controller'
 import IService from '@interfaces/domain/services/service'
 
 @injectable()
-
-
 export default class CreateCustomerController implements IController {
   constructor(
     @inject('CustomerService')

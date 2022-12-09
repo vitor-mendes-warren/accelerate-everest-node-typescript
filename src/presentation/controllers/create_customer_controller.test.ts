@@ -6,9 +6,7 @@ import { mockRequest, mockResponse } from 'src/utils/mock';
 jest.mock('src/domain/customer/services/create_customer_service')
 jest.mock('src/domain/customer/repository/customer_repository')
 jest.mock('src/domain/customer/model/customer')
-
 const customerServiceMock = CustomerService as jest.Mock<CustomerService>
-
 const req = mockRequest 
 const res = mockResponse
 describe('UserController', () => {
