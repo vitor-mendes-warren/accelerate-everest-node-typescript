@@ -1,5 +1,3 @@
-import { pathsToModuleNameMapper } from 'ts-jest';
-import { compilerOptions } from './tsconfig.json';
 
 export default {
   preset: 'ts-jest',
@@ -8,7 +6,7 @@ export default {
   collectCoverage: true,
   coverageDirectory: 'coverage',
   coverageProvider: 'v8',
-  moduleDirectories: ['node_modules', 'src'],
+  moduleDirectories: ['node_modules', 'src','supertest'],
   moduleNameMapper: {
     "@controller/*": [
       "./src/presentation/controllers/*"

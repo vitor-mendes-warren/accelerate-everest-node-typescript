@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for domain/customer/services/create_customer_service.ts</title>
+    <title>Code coverage report for presentation/middleware/customer/customer_schema.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../prettify.css" />
     <link rel="stylesheet" href="../../../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../index.html">All files</a> / <a href="index.html">domain/customer/services</a> create_customer_service.ts</h1>
+        <h1><a href="../../../index.html">All files</a> / <a href="index.html">presentation/middleware/customer</a> customer_schema.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">96.77% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>14/14</span>
+                <span class='fraction'>30/31</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">80% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>4/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">96.77% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>14/14</span>
+                <span class='fraction'>30/31</span>
             </div>
         
             
@@ -77,7 +77,24 @@
 <a name='L12'></a><a href='#L12'>12</a>
 <a name='L13'></a><a href='#L13'>13</a>
 <a name='L14'></a><a href='#L14'>14</a>
-<a name='L15'></a><a href='#L15'>15</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -91,20 +108,54 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Customer from 'src/domain/customer/model/customer'
-import IRepository from '@interfaces/domain/repository/repository'
-import { inject, injectable } from 'tsyringe'
-import IService from '@interfaces/domain/services/service'
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as yup from 'yup'
+import { parse } from 'date-fns'
+import Customer from 'src/domain/customer/model/customer'
 &nbsp;
-@injectable()
-export default class CustomerService implements IService&lt;Customer&gt; {
-  constructor (
-    @inject('CustomerRepository')
-    private readonly customerRepository: IRepository&lt;Customer&gt;) { }
-  public create (customer: Customer): void {
-    this.customerRepository.create(customer)
-  }
-}
+enum cpfMaxMin { 'max' = 14, 'min' = 11 }
+enum phoneMaxMin { 'max' = 15, 'min' = 11 }
+enum postalCodeMaxMin { 'max' = 9, 'min' = 8 }
+&nbsp;
+const today = new Date()
+&nbsp;
+export const bodyValidation: yup.SchemaOf&lt;Customer&gt; = yup.object().shape({
+  id: yup.number(),
+  full_name: yup.string().required().min(5),
+  email: yup.string().required().email(),
+  email_confirmation: yup.string().required().email(),
+  address: yup.string().required(),
+  birthdate: yup.date().transform(function (value, originalValue) {
+    if (this.isType(value)) {
+      return value
+    }
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    return parse(originalValue, 'dd.MM.yyyy', new Date())</span></span>
+  })
+    .required().max(today),
+  cellphone: yup.string().min(phoneMaxMin.min).max(phoneMaxMin.max).required(),
+  city: yup.string().required(),
+  whatsapp: yup.bool().required(),
+  email_sms: yup.bool().required(),
+  country: yup.string().required(),
+  cpf: yup.string().min(cpfMaxMin.min).max(cpfMaxMin.max).required(),
+  postal_code: yup.string().min(postalCodeMaxMin.min).max(postalCodeMaxMin.max).required()
+})
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->

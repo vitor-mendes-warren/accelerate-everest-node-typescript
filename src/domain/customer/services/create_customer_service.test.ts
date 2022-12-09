@@ -8,11 +8,14 @@ jest.mock('src/domain/customer/model/customer')
 const customerMock = Customer as jest.Mock<Customer>
 const customerRepositoryMock = CustomerRepository as jest.Mock<CustomerRepository>
 
-it('should StatusCode be 200 when handle() is calls', () => {
 
-   const customer = new customerMock()
-   const customerRepository = new customerRepositoryMock()
-   const customerService = new CustomerService(customerRepository)
-   customerService.create(customer)
-   expect(customerRepository.create).toBeCalled
+describe('CustomerService', () => {
+   it('should call CustomerRepository.create() when CustomerService.create() is called ', () => {
+   
+      const customer = new customerMock()
+      const customerRepository = new customerRepositoryMock()
+      const customerService = new CustomerService(customerRepository)
+      customerService.create(customer)
+      expect(customerRepository.create).toBeCalled
+   })
 })
