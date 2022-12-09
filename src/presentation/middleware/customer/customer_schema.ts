@@ -2,9 +2,9 @@ import * as yup from 'yup'
 import { parse } from 'date-fns'
 import Customer from 'src/domain/customer/model/customer'
 
-enum cpfMaxMin { 'max' = 14, 'min' = 11 };
-enum phoneMaxMin { 'max' = 15, 'min' = 11 };
-enum postalCodeMaxMin { 'max' = 9, 'min' = 8 };
+enum cpfMaxMin { 'max' = 14, 'min' = 11 }
+enum phoneMaxMin { 'max' = 15, 'min' = 11 }
+enum postalCodeMaxMin { 'max' = 9, 'min' = 8 }
 
 const today = new Date()
 

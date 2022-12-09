@@ -15,7 +15,6 @@ export default class CreateCustomerController implements IController {
       this.customerService.create(req.body as Customer)
       return res.status(200).json({ status: 'sucess', customer_created: req.body as Customer })
     } catch (error) {
-      console.log(error)
       return res.status(500).json(error)
     }
   }
