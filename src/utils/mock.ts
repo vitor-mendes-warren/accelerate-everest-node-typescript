@@ -12,7 +12,6 @@ export const mockResponse = {
 export const mockRequest = {
   body: Customer
 } as Request
-<<<<<<< HEAD
 
 export const bodyError = {
   errors: {
@@ -46,5 +45,3 @@ export const customerBody = {
   address: 'rua floripa'
 
 }
-=======
->>>>>>> 95c842673541ea1c4256c69781b8c1d982a794ea
