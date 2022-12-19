@@ -10,6 +10,7 @@
     "skipLibCheck": true,
     "sourceMap": true,
     "moduleResolution": "node",
+    "resolveJsonModule": true,
     "module": "CommonJS",
     "esModuleInterop": true,
     "strictFunctionTypes": true,
