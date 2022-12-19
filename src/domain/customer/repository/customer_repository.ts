@@ -5,6 +5,6 @@ export default class CustomerRepository implements IRepository<Customer> {
   private readonly customers: Customer[] = []
 
   public create (customer: Customer): void {
-      this.customers.push(customer)
+    this.customers.push(customer)
   }
 }
