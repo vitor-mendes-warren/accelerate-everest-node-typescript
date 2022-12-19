@@ -2,8 +2,8 @@ import 'reflect-metadata'
 import './shared/container/'
 import { config } from 'dotenv'
 import express, { Express, json } from 'express'
-import router from '@routes/routes'
-const app: Express = express()
+import router from './presentation/routes/routes'
+export const app: Express = express()
 
 app.use(json())
 app.use(router)
