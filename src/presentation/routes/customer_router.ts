@@ -2,9 +2,10 @@
 import { Router } from 'express'
 import CreateCustomerController from '@controller/create_customer_controller'
 import customerMiddleware from '@middleware/customer/customer_middleware'
+import { container } from 'tsyringe'
 
 const customerRouter = Router()
-const createUserController = new CreateCustomerController()
+const createUserController = container.resolve(CreateCustomerController)
 
 customerRouter.post('/', customerMiddleware, createUserController.handle)
 

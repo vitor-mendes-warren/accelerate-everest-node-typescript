@@ -3,7 +3,7 @@ import './shared/container/'
 import { config } from 'dotenv'
 import express, { Express, json } from 'express'
 import router from '@routes/routes'
-const app: Express = express()
+export const app: Express = express()
 
 app.use(json())
 app.use(router)

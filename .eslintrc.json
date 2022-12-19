@@ -1,14 +1,11 @@
 {
-   "parser": "@typescript-eslint/parser",
-   "extends": "standard-with-typescript",
-   "parserOptions": {
-      "project": "./tsconfig.json"
-   },
-   "env": {
-      "browser": true,
-      "es2021": true
-   },
-   "plugins": [
-      "@typescript-eslint"
-   ]
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+        "@typescript-eslint"
+    ],
+    "extends": "standard-with-typescript",
+    "parserOptions": {
+        "project": "./tsconfig.json"
+    }
 }
