@@ -6,6 +6,9 @@ import express, { Express, json } from 'express'
 import router from './presentation/routes/routes'
 =======
 import router from '@routes/routes'
+<<<<<<< HEAD
+>>>>>>> 95c842673541ea1c4256c69781b8c1d982a794ea
+=======
 >>>>>>> 95c842673541ea1c4256c69781b8c1d982a794ea
 export const app: Express = express()
 
