@@ -6,14 +6,12 @@ servers:
 externalDocs:
   description: Find out more about Swagger
   url: http://swagger.io
-tags:
-  - name: Customer
-    description: Everything about your customers
+   
 paths:
   /customer:
     post:
-      tags:
-        - customer
+      tags: 
+        - Customer
       summary: Add a new customer
       description: Add a new customer
       requestBody:
