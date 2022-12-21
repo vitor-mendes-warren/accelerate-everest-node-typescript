@@ -5,7 +5,7 @@ import { join } from 'path'
 import YAML from 'yamljs'
 
 export const router = Router()
-router.use('/docs', SwaggerUI.serve) // inicializa a documentação swagger
+router.use('/docs', SwaggerUI.serve)
 router.use('/customer', customerRouter)
 router.get('/docs', SwaggerUI.setup(
   YAML.load(join(__dirname, '..', '..', '..', 'docs', 'swagger.yaml'))))

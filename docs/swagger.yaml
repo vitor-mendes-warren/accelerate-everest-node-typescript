@@ -1,6 +1,86 @@
 openapi: 3.0.3
 info:
-  title: Swagger Petstore - OpenAPI 3.0
-  description: 
-   
-  
+  title: Swagger Customer API - OpenAPI 3.0
+servers:
+  - url: http://localhost:3000/v1/
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io
+tags:
+  - name: Customer
+    description: Everything about your customers
+paths:
+  /customer:
+    post:
+      tags:
+        - customer
+      summary: Add a new customer
+      description: Add a new customer
+      requestBody:
+          description: Add a new customer
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customer'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Customer'
+            application/x-www-form-urlencoded:
+              schema:
+                $ref: '#/components/schemas/Customer'
+          required: true
+      responses:
+          '200':
+            description: Successful operation
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Customer'          
+              application/xml:
+                schema:
+                  $ref: '#/components/schemas/Customer'
+          '500':
+            description: Invalid input
+components:
+  schemas:
+    Customer:
+        properties:
+          id:
+            type: integer
+            format: int64
+          full_name:
+            type: string
+            example: Vitor Daniel Mendes
+          email:
+            type: string
+            example: example@gmail.com
+          email_confirmation: 
+            type: string
+            example: example@gmail.com
+          cellphone:
+            type: integer
+            format: int64
+            example: 47991823380
+          birthdate: 
+            type: string
+            example: 03-06-2000
+          email_sms: 
+            type: boolean
+          whatsapp: 
+            type: boolean
+          country:
+            type: string        
+          city:
+            type: string
+          cpf:
+            type: string
+            example: 101.568.999-06
+          postal_code:
+            type: string
+            example: 89031222
+          address:
+            type: string
+            example: rua floripa
+        xml:
+          name: customer
+        type: object
