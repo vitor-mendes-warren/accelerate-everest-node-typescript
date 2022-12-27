@@ -18,5 +18,4 @@ describe('POST /customer', () => {
     expect(res.statusCode).toBe(200)
     expect(res.body.customer_created).toStrictEqual(customerBody)
   })
- 
 })

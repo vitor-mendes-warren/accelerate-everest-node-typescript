@@ -6,17 +6,9 @@
     ],
     "extends": "standard-with-typescript",
     "parserOptions": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-
         "project": "./tsconfig.json"
-        
-
-=======
-        "project": "./tsconfig.json"
->>>>>>> 95c842673541ea1c4256c69781b8c1d982a794ea
-=======
-        "project": "./tsconfig.json"
->>>>>>> 95c842673541ea1c4256c69781b8c1d982a794ea
+    },
+    "rules": {
+       "@typescript-eslint/no-misused-promises":"off"
     }
 }
