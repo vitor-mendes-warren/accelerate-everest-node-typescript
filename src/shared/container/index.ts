@@ -6,6 +6,8 @@ import CustomerService from 'src/domain/customer/services/create_customer_servic
 import IService from '@interfaces/domain/services/service'
 import IController from '@interfaces/presentation/controllers/controller'
 import CreateCustomerController from '../../presentation/controllers/create_customer_controller'
+import MongoDBClient from 'src/infrastructure/mongodb/mongodb_client'
+import { IDatabaseClient } from '@interfaces/infrastructure/database'
 
 container.registerSingleton<IRepository<Customer>>(
   'CustomerRepository',
@@ -18,4 +20,9 @@ container.registerSingleton<IService<Customer>>(
 container.registerSingleton<IController>(
   'CreateCustomerController',
   CreateCustomerController
+)
+
+container.registerSingleton<IDatabaseClient>(
+  'DatabaseClient',
+  MongoDBClient
 )
