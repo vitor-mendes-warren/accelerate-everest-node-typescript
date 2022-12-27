@@ -56,8 +56,10 @@
     "node": "19.x"
   },
   "dependencies": {
+    "@types/mongodb": "^4.0.7",
     "@types/yamljs": "^0.2.31",
     "dotenv": "^16.0.3",
+    "mongoose": "^6.8.1",
     "reflect-metadata": "^0.1.13",
     "supertest": "^6.3.3",
     "swagger-ui-express": "^4.6.0",
