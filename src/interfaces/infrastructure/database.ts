@@ -1,8 +1,8 @@
 
-import { Mongoose } from 'mongoose'
+import { Db } from 'mongodb'
 
 export interface IDatabaseClient {
   connect: () => Promise<any>
   close: () => Promise<any>
-  getInstance: () => Mongoose
+  getInstance: () => Db
 }

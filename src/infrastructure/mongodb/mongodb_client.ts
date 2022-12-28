@@ -1,22 +1,22 @@
 import { IDatabaseClient } from '@interfaces/infrastructure/database'
 import { config } from 'dotenv'
-import { Mongoose } from 'mongoose'
+import { Db } from 'mongodb'
+import mongoose from 'mongoose'
 config({ path: './config/config.env' })
 
 export default class MongoDBClient implements IDatabaseClient {
   public uri: string = (process.env.mongodbUrl ?? 'mongodb://localhost:27017/warren-backend')
-  private readonly client: Mongoose = new Mongoose()
-  private readonly database = this.client.connection.db
+
   public async connect (): Promise<void> {
-    this.client.set('strictQuery', true)
-    await this.client.connect(this.uri)
+    mongoose.set('strictQuery', true)
+    await mongoose.connect(this.uri)
   }
 
   public async close (): Promise<void> {
-    await this.client.connection.close()
+    await mongoose.connection.close()
   }
 
-  public getInstance (): Mongoose {
-    return this.client
+  public getInstance (): Db {
+    return mongoose.connection.db
   }
 }

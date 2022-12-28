@@ -1,4 +1,3 @@
-import { Schema } from 'mongoose'
 import BaseModel from './base_model'
 
 export default class Customer extends BaseModel {
@@ -15,18 +14,3 @@ export default class Customer extends BaseModel {
   postal_code: string
   address: string
 }
-
-export const customerDataSchema = new Schema({
-  full_name: String,
-  email: String,
-  email_confirmation: String,
-  cellphone: String,
-  birthdate: String,
-  email_sms: Boolean,
-  whatsapp: Boolean,
-  country: String,
-  city: String,
-  cpf: String,
-  postal_code: String,
-  address: String
-}, { collection: 'Customer' })

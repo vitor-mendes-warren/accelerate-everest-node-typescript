@@ -1,32 +1,31 @@
 import IRepository from '@interfaces/domain/repository/repository'
-import { ObjectID, ObjectId } from 'bson'
-import { Model } from 'mongoose'
+import { Schema } from 'mongoose'
 import MongoDBClient from 'src/infrastructure/mongodb/mongodb_client'
 import { inject, injectable } from 'tsyringe'
-import Customer, { customerDataSchema } from '../model/customer'
+import Customer from '../model/customer'
+import customer_schema from '../model/schema/customer_schema'
 
 @injectable()
 export default class CustomerRepository implements IRepository<Customer> {
-  private readonly Customer: Model<{}>
   constructor (
     @inject('DatabaseClient')
     private readonly dbClient: MongoDBClient
-  ) {
-    this.Customer = this.dbClient.getInstance().model('customerDataSchema', customerDataSchema)
-  }
+  ) { }
+
+  read: (id: Schema.Types.ObjectId) => Promise<Customer | null>
+  update: (id: Schema.Types.ObjectId) => Promise<Customer | null>
+  readAll: () => Promise<[Customer]>
+  delete: (id: Schema.Types.ObjectId) => Promise<Customer>
 
   public async create (customer: Customer): Promise<void> {
-    const collection = new this.Customer(customer)
-    await collection.save()
+    await customer_schema.create(customer)
+    // const CustomerModel = this.dbClient.getInstance().model('customerDataSchema', customerDataSchema)
+    // const collection = new CustomerModel(customer)
+    // await collection.save()
   }
 
-  public async list (id: ObjectID): Promise<any> {
-    return await new Promise((resolve, reject) => {
-      Model.find({ id })
-        .exec(function (err, data) {
-          if (err) reject(err)
-          resolve(data)
-        })
-    })
-  }
+  // public async read (id: Schema.Types.ObjectId): Promise<Customer | null> {
+  //   const customerModel = this.dbClient.getInstance().model('customerDataSchema', customerDataSchema)
+  //   return await customerModel.findOne(id)
+  // }
 }
