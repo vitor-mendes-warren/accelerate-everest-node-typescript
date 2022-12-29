@@ -1,6 +1,6 @@
 import IRepository from '@interfaces/domain/repository/repository'
 import { IDatabaseClient } from '@interfaces/infrastructure/database'
-import { Collection, DeleteResult, ObjectId } from 'mongodb'
+import { Collection, ObjectId } from 'mongodb'
 import { inject, injectable } from 'tsyringe'
 import Customer from '../model/customer'
 
@@ -28,10 +28,4 @@ export default class CustomerRepository implements IRepository<Customer> {
   public async create (customer: Customer): Promise<void> {
     void this.collection.insertOne(customer)
   }
-
-  // public async getById (_id: Schema.Types.ObjectId): Promise< Customer | null > {
-  // }
-
-  // public async update(_id: Schema.Types.ObjectId, update: UpdateFilter<Document>): Promise<Customer | null> {
-  // }
 }
