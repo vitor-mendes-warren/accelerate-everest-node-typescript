@@ -10,7 +10,7 @@ export default class CreateCustomerController implements IController {
     @inject('CustomerService')
     private readonly customerService: IService<Customer>) { }
 
-  handle = (req: Request, res: Response): Response => {
+  handle = async (req: Request, res: Response): Promise<Response> => {
     try {
       this.customerService.create(req.body as Customer)
       return res.status(200).json({ status: 'sucess', customer_created: req.body as Customer })
