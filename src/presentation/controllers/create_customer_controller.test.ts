@@ -3,6 +3,7 @@ import CustomerService from 'src/domain/customer/services/create_customer_servic
 import CreateCustomerController from './create_customer_controller'
 import { mockRequest, mockResponse } from 'src/utils/mock'
 import CustomerRepository from 'src/domain/customer/repository/customer_repository'
+import MongoDBClient from 'src/infrastructure/mongodb/mongodb_client'
 
 jest.mock('src/domain/customer/services/create_customer_service')
 jest.mock('src/domain/customer/repository/customer_repository')
@@ -14,9 +15,9 @@ const res = mockResponse
 describe('UserController', () => {
   describe('handle', () => {
     it('should StatusCode be 200 when handle is calls with valid body', () => {
-      const customerService = new CustomerService(new CustomerRepository())
+      const customerService = new CustomerService(new CustomerRepository(new MongoDBClient()))
       const createCustomerController = new CreateCustomerController(customerService)
-      createCustomerController.handle(req, res)
+      void createCustomerController.handle(req, res)
       expect(res.statusCode).toBe(200)
     })
   })
