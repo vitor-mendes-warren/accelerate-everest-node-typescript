@@ -15,8 +15,9 @@ describe('CustomerService', () => {
       const customerRepository = new CustomerRepositoryMock()
       const customerService = new CustomerService(customerRepository)
       const spy = jest.spyOn(customerRepository, 'create')
-      customerService.create(customer)
+      void customerService.create(customer)
       expect(spy).toHaveBeenCalled()
     })
   })
-})
+}
+)
